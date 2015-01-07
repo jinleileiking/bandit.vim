@@ -115,6 +115,24 @@ let ColourAssignment['GlobalVariable']  = {"GUIFG": '#6D9CBE',  "GUI": 'Underlin
 
 let ColourAssignment['User2']          = {"GUIFG": 'red', "GUIBG" : 'lightblue'}
 
+
+" highlight Pmenu guifg=white guibg=darkblue
+" highlight PmenuSel guifg=red guibg=blue
+"highlight Pmenu guifg=white guibg=DarkGray
+"highlight PmenuSel guifg=white guibg=red
+"highlight Comment guifg=#404040 gui=none
+"hi Search guibg=yellow guifg=red gui=none
+"highlight return guifg=red guibg=darkblue
+" highlight CursorLine guibg=#222222
+"hi FoldColumn guifg=white guibg=#660000
+"hi FoldColumn guifg=white guibg=darkblue
+" hi FoldColumn guifg=white guibg=#181818
+"hi Folded guifg=darkgray guibg=#141414
+" hi Folded guifg=darkgrey guibg=#141414
+"hi LineNr guifg=darkgray guibg=#181818
+"hi LineNr guifg=#404040 guibg=#181818
+" hi User2 guifg=red guibg=lightblue
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
