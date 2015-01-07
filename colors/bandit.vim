@@ -55,16 +55,34 @@ let ColourAssignment['LineNr']          = {"GUIFG": '#404040',      "GUIBG": '#1
 let ColourAssignment['CursorLine']          = {"GUIBG": '#222222'}
 
 "highlight Number                    guifg=#A5C261 ctermfg=107
-highlight PreProc                   guifg=#E6E1DC ctermfg=103
+"highlight PreProc                   guifg=#E6E1DC ctermfg=103
 let ColourAssignment['PreProc']         = {"GUIFG": '#E6E1DC',        "GUI":     'Bold',      "TERM":  'Underline'}
 "highlight Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 let ColourAssignment['Statement']       = {"GUIFG": '#CC7833',        "TERM":    'Bold'}
 " highlight String                    guifg=#A5C261 ctermfg=107
+"highlight Constant                  guifg=#6D9CBE ctermfg=73
+"let ColourAssignment['Constant']        = {"GUIFG": '#6D9CBE',     "CTERMFG": '73',    "TERM":  'Underline'}
+let ColourAssignment['Constant']        = {"GUIFG": '#A5C261',     "CTERMFG": '73',    "TERM":  'Underline'}
 let ColourAssignment['String']          = {"GUIFG": '#A5C261'}
+let ColourAssignment['EnumerationValue']= {"GUIFG": '#A5C261'}
+let ColourAssignment['SpecialChar']     = {"GUIFG": '#eeffdd'}     " special character in a constant
 "highlight Title                     guifg=#FFFFFF ctermfg=15
 let ColourAssignment['Title']           = {"GUIFG": '#FFFFFF',        "GUI": "Bold"}
-highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
+"highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
 let ColourAssignment['Type']            = {"GUIFG": '#DA4939',     "TERM":    'Underline'}
+let ColourAssignment['Structure']       = {"GUIFG": '#DA4939'} " struct, union, enum, etc.
+let ColourAssignment['Macro']           = {"GUIFG": '#DA4939',     "GUI":     'Bold'} " same as Define
+" Statements are shades of Blue
+" let ColourAssignment['Conditional']     = {"GUIFG": '#5555FF'} " if, then, else, endif, switch, etc.
+" let ColourAssignment['Repeat']          = {"GUIFG": '#8888FF'} " for, do, while, etc.
+" let ColourAssignment['Label']           = {"GUIFG": '#2222FF'} " case, default, etc.
+" let ColourAssignment['Exception']       = {"GUIFG": '#5555AA'} " try, catch, throw
+
+let ColourAssignment['Conditional']     = {"GUIFG": '#DA4939'} " if, then, else, endif, switch, etc.
+let ColourAssignment['Repeat']          = {"GUIFG": '#DA4939'} " for, do, while, etc.
+let ColourAssignment['Label']           = {"GUIFG": '#DA4939'} " case, default, etc.
+let ColourAssignment['Exception']       = {"GUIFG": '#DA4939'} " try, catch, throw
+let ColourAssignment['Member']          = {"GUIFG": '#AA5544',    "TERM":    'Underline'}
 
 "highlight Include                   guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 let ColourAssignment['Include']         = {"GUIFG": '#CC7833',        "GUI":     'Bold'} " preprocessor #include
@@ -84,15 +102,31 @@ let ColourAssignment['Search']         = {"GUIBG": 'yellow',  "GUIFG": 'red',   
 let ColourAssignment['return']         = {"GUIBG": 'darkblue',  "GUIFG": 'red'}
 
 
-"highlight Constant                  guifg=#6D9CBE ctermfg=73
-let ColourAssignment['Constant']        = {"GUIFG": '#6D9CBE',     "CTERMFG": '73',    "TERM":  'Underline'}
 
 " highlight Define                    guifg=#CC7833 ctermfg=173
 let ColourAssignment['Define']          = {"GUIFG": '#CC7833',     "GUI":     'Bold'} " preprocessor #define
 "highlight Function                  guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 let ColourAssignment['Function']        = {"GUIFG": '#FFC66D',     "CTERMFG": '221'}
+"let ColourAssignment['DefinedName']     = {"GUIFG": '#ee82ee',     "TERM":    'Underline'}
+let ColourAssignment['DefinedName']     = {"GUIFG": '#FFC66D',     "TERM":    'Underline'}
 "highlight Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
 let ColourAssignment['Error']           = {"GUIFG": '#FFC66D',       "GUIBG":   '#990000',       "TERM":  'Reverse'}
+let ColourAssignment['GlobalVariable']  = {"GUIFG": 'lightred',  "CTERMFG": 'Cyan',      "TERM":  'Underline'}
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Unspecified colours default to NONE, EXCEPT cterm(.*) which default to matching gui(.*)
 " ctermfg will default to 'Blue' and ctermbg to 'NONE' if gui(.*) are RGB
@@ -122,13 +156,7 @@ let ColourAssignment['Character']       = {"GUIFG": 'DarkYellow'}
 
 " Preprocessor directives are bold shades of blue
 
-let ColourAssignment['Macro']           = {"GUIFG": '#5555FF',     "GUI":     'Bold'} " same as Define
 
-" Statements are shades of Blue
-let ColourAssignment['Conditional']     = {"GUIFG": '#5555FF'} " if, then, else, endif, switch, etc.
-let ColourAssignment['Repeat']          = {"GUIFG": '#8888FF'} " for, do, while, etc.
-let ColourAssignment['Label']           = {"GUIFG": '#2222FF'} " case, default, etc.
-let ColourAssignment['Exception']       = {"GUIFG": '#5555AA'} " try, catch, throw
 
 " Operators (+, =, -, % etc): not defined by default C syntax
 let ColourAssignment['Operator']        = {"GUIFG": '#CCCCFF'}
@@ -141,22 +169,16 @@ let ColourAssignment['Method']          = {"GUIFG": '#009966',     "CTERMFG": 'C
 
 " Special additions created by mktypes.py are shades of Purple or Grey
 let ColourAssignment['Class']           = {"GUIFG": 'Purple',      "TERM":  'Underline'}
-let ColourAssignment['DefinedName']     = {"GUIFG": '#ee82ee',     "TERM":    'Underline'}
-let ColourAssignment['EnumerationValue']= {"GUIFG": '#c000c0'}
 let ColourAssignment['EnumerationName'] = {"GUIFG": '#ff22ff',     "TERM":  'Underline'}
-let ColourAssignment['Member']          = {"GUIFG": 'DarkGrey',    "TERM":    'Underline'}
 let ColourAssignment['Union']           = {"GUIFG": 'Grey',        "TERM":    'Underline'}
-let ColourAssignment['GlobalVariable']  = {"GUIFG": '#666600',     "CTERMFG": 'Cyan',      "TERM":  'Underline'}
 let ColourAssignment['LocalVariable']   = {"GUIFG": '#aaa14c',     "CTERMFG": 'Cyan'}
 let ColourAssignment['GlobalConstant']  = {"GUIFG": '#bbbb00',     "CTERMFG": 'Yellow',      "TERM":  'Underline'}
 
 " Types/storage classes etc are shades of orangey-red
 let ColourAssignment['StorageClass']    = {"GUIFG": '#ff4040'} " static, register, volatile, etc.
-let ColourAssignment['Structure']       = {"GUIFG": '#ff8080'} " struct, union, enum, etc.
 
 " Special Stuff
 let ColourAssignment['Special']         = {"GUIFG": 'Red',         "TERM":    'Bold'}
-let ColourAssignment['SpecialChar']     = {"GUIFG": '#AA0000'}     " special character in a constant
 let ColourAssignment['SpecialKey']      = {"GUIFG": '#555555'}     " special highlighting for 'listchars' etc
 let ColourAssignment['NonText']         = {"GUIFG": '#555555'}     " special highlighting for 'listchars' etc
 let ColourAssignment['MatchParen']      = {"GUI":   'Underline',   "GUIFG": "Yellow"}   " Highlighting of matching parentheses
