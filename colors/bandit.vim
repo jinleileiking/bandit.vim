@@ -10,6 +10,7 @@ let g:colors_name = "bandit"
 
 let ColourAssignment = {}
 
+set background=dark
 
 
 " highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15	
