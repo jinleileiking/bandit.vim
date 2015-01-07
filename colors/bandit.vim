@@ -65,7 +65,7 @@ let ColourAssignment['Statement']       = {"GUIFG": '#CC7833',        "TERM":   
 let ColourAssignment['Constant']        = {"GUIFG": '#A5C261',     "CTERMFG": '73',    "TERM":  'Underline'}
 let ColourAssignment['String']          = {"GUIFG": '#A5C261'}
 let ColourAssignment['EnumerationValue']= {"GUIFG": '#A5C261'}
-let ColourAssignment['SpecialChar']     = {"GUIFG": '#eeffdd'}     " special character in a constant
+let ColourAssignment['SpecialChar']     = {"GUIFG": '#DA4939'}     " special character in a constant
 "highlight Title                     guifg=#FFFFFF ctermfg=15
 let ColourAssignment['Title']           = {"GUIFG": '#FFFFFF',        "GUI": "Bold"}
 "highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
@@ -111,7 +111,7 @@ let ColourAssignment['Function']        = {"GUIFG": '#FFC66D',     "CTERMFG": '2
 let ColourAssignment['DefinedName']     = {"GUIFG": '#FFC66D',     "TERM":    'Underline'}
 "highlight Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
 let ColourAssignment['Error']           = {"GUIFG": '#FFC66D',       "GUIBG":   '#990000',       "TERM":  'Reverse'}
-let ColourAssignment['GlobalVariable']  = {"GUIFG": 'lightred',  "CTERMFG": 'Cyan',      "TERM":  'Underline'}
+let ColourAssignment['GlobalVariable']  = {"GUIFG": '#8888ff',  "CTERMFG": 'Cyan',      "TERM":  'Underline'}
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
