@@ -111,8 +111,9 @@ let ColourAssignment['Function']        = {"GUIFG": '#FFC66D',     "CTERMFG": '2
 let ColourAssignment['DefinedName']     = {"GUIFG": '#FFC66D',     "TERM":    'Underline'}
 "highlight Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
 let ColourAssignment['Error']           = {"GUIFG": '#FFC66D',       "GUIBG":   '#990000',       "TERM":  'Reverse'}
-let ColourAssignment['GlobalVariable']  = {"GUIFG": '#8888ff',  "CTERMFG": 'Cyan',      "TERM":  'Underline'}
+let ColourAssignment['GlobalVariable']  = {"GUIFG": '#6D9CBE',  "GUI": 'Underline', "CTERMFG": 'Cyan',      "TERM":  'Underline'}
 
+let ColourAssignment['User2']          = {"GUIFG": 'red', "GUIBG" : 'lightblue'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
