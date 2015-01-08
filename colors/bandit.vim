@@ -125,14 +125,9 @@ let ColourAssignment['User2']          = {"GUIFG": 'red', "GUIBG" : 'lightblue'}
 "hi Search guibg=yellow guifg=red gui=none
 "highlight return guifg=red guibg=darkblue
 " highlight CursorLine guibg=#222222
-"hi FoldColumn guifg=white guibg=#660000
-"hi FoldColumn guifg=white guibg=darkblue
-" hi FoldColumn guifg=white guibg=#181818
-"hi Folded guifg=darkgray guibg=#141414
-" hi Folded guifg=darkgrey guibg=#141414
-"hi LineNr guifg=darkgray guibg=#181818
-"hi LineNr guifg=#404040 guibg=#181818
-" hi User2 guifg=red guibg=lightblue
+
+let ColourAssignment['FoldColumn']          = {"GUIFG": 'white', "GUIBG" : '#181818'}
+let ColourAssignment['Folded']          = {"GUIFG": 'darkgrey', "GUIBG" : '#141414'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
