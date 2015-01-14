@@ -2,7 +2,7 @@
 " Vim colour file
 " Maintainer:	A. S. Budden
 
-hi clear
+"hi clear
 if exists("syntax_on")
   syntax reset
 endif
@@ -13,9 +13,6 @@ let ColourAssignment = {}
 set background=dark
 
 
-" highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15	
-" highlight CursorLine                guibg=#000000 ctermbg=233 cterm=NONE
-" highlight Visual                    guibg=#5A647E ctermbg=60
 
 " highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 " highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
@@ -46,8 +43,11 @@ set background=dark
 " highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#005f5f ctermbg=23
 
 
-" highlight PreCondit                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
-let ColourAssignment['PreCondit']       = {"GUIFG": '#CC7833',     "GUI":     'Bold'} " preprocessor #if, #else, #endif, etc.
+let ColourAssignment['Visual']       = {"GUIBG": '#5A647E'} " preprocessor #if, #else, #endif, etc.
+let ColourAssignment['Cursor']       = {"GUIBG": '#FFFFFF', "GUIFG":'#000000'} " preprocessor #if, #else, #endif, etc.
+let ColourAssignment['Directory']       = {"GUIFG": '#FFC66D'} " preprocessor #if, #else, #endif, etc.
+
+
 " highlight Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
 " highlight LineNr                    guifg=#2B2B2B ctermfg=159 guibg=#C0C0FF
 let ColourAssignment['LineNr']          = {"GUIFG": '#404040',      "GUIBG": '#181818'}
@@ -61,17 +61,35 @@ let ColourAssignment['PreProc']         = {"GUIFG": '#E6E1DC',        "GUI":    
 "highlight Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 let ColourAssignment['Statement']       = {"GUIFG": '#CC7833',        "TERM":    'Bold'}
 " highlight String                    guifg=#A5C261 ctermfg=107
-"highlight Constant                  guifg=#6D9CBE ctermfg=73
 "let ColourAssignment['Constant']        = {"GUIFG": '#6D9CBE',     "CTERMFG": '73',    "TERM":  'Underline'}
 let ColourAssignment['Constant']        = {"GUIFG": '#A5C261',     "CTERMFG": '73',    "TERM":  'Underline'}
-let ColourAssignment['String']          = {"GUIFG": '#A5C261'}
-let ColourAssignment['EnumerationValue']= {"GUIFG": '#A5C261'}
-let ColourAssignment['SpecialChar']     = {"GUIFG": '#DA4939'}     " special character in a constant
+
+hi  link String                   Constant
+hi  link EnumerationValue         Constant
+"let ColourAssignment['String']          = {"GUIFG": '#A5C261'}
+"let ColourAssignment['EnumerationValue']= {"GUIFG": '#A5C261'}
 "highlight Title                     guifg=#FFFFFF ctermfg=15
 let ColourAssignment['Title']           = {"GUIFG": '#FFFFFF',        "GUI": "Bold"}
 "highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
 let ColourAssignment['Type']            = {"GUIFG": '#DA4939',     "TERM":    'Underline'}
-let ColourAssignment['Structure']       = {"GUIFG": '#DA4939'} " struct, union, enum, etc.
+hi  link Structure         Type
+hi  link SpecialChar       Type
+
+hi  link Conditional       Type
+hi  link Repeat       Type
+hi  link Label       Type
+hi  link Exception       Type
+
+"let ColourAssignment['Conditional']     = {"GUIFG": '#DA4939'} " if, then, else, endif, switch, etc.
+"let ColourAssignment['Repeat']          = {"GUIFG": '#DA4939'} " for, do, while, etc.
+"let ColourAssignment['Label']           = {"GUIFG": '#DA4939'} " case, default, etc.
+"let ColourAssignment['Exception']       = {"GUIFG": '#DA4939'} " try, catch, throw
+"let ColourAssignment['Structure']       = {"GUIFG": '#DA4939'} " struct, union, enum, etc.
+"let ColourAssignment['SpecialChar']     = {"GUIFG": '#DA4939'}     " special character in a constant
+
+
+
+
 let ColourAssignment['Macro']           = {"GUIFG": '#DA4939',     "GUI":     'Bold'} " same as Define
 " Statements are shades of Blue
 " let ColourAssignment['Conditional']     = {"GUIFG": '#5555FF'} " if, then, else, endif, switch, etc.
@@ -79,17 +97,12 @@ let ColourAssignment['Macro']           = {"GUIFG": '#DA4939',     "GUI":     'B
 " let ColourAssignment['Label']           = {"GUIFG": '#2222FF'} " case, default, etc.
 " let ColourAssignment['Exception']       = {"GUIFG": '#5555AA'} " try, catch, throw
 
-let ColourAssignment['Conditional']     = {"GUIFG": '#DA4939'} " if, then, else, endif, switch, etc.
-let ColourAssignment['Repeat']          = {"GUIFG": '#DA4939'} " for, do, while, etc.
-let ColourAssignment['Label']           = {"GUIFG": '#DA4939'} " case, default, etc.
-let ColourAssignment['Exception']       = {"GUIFG": '#DA4939'} " try, catch, throw
 let ColourAssignment['Member']          = {"GUIFG": '#AA5544',    "TERM":    'Underline'}
 
-"highlight Include                   guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 let ColourAssignment['Include']         = {"GUIFG": '#CC7833',        "GUI":     'Bold'} " preprocessor #include
+hi link Precondit Include
 
 
-" highlight Normal                    guifg=#E6E1DC guibg=#111111 
 let ColourAssignment['Normal']          = {"GUIFG": '#E6E1DC',       "GUIBG":  '#111111'}
 
 " Comments are green
@@ -104,13 +117,11 @@ let ColourAssignment['return']         = {"GUIBG": 'darkblue',  "GUIFG": 'red'}
 
 
 
-" highlight Define                    guifg=#CC7833 ctermfg=173
 let ColourAssignment['Define']          = {"GUIFG": '#CC7833',     "GUI":     'Bold'} " preprocessor #define
 "highlight Function                  guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 let ColourAssignment['Function']        = {"GUIFG": '#FFC66D',     "CTERMFG": '221'}
 "let ColourAssignment['DefinedName']     = {"GUIFG": '#ee82ee',     "TERM":    'Underline'}
 let ColourAssignment['DefinedName']     = {"GUIFG": '#FFC66D',     "TERM":    'Underline'}
-"highlight Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
 let ColourAssignment['Error']           = {"GUIFG": '#FFC66D',       "GUIBG":   '#990000',       "TERM":  'Reverse'}
 let ColourAssignment['GlobalVariable']  = {"GUIFG": '#6D9CBE',  "GUI": 'Underline', "CTERMFG": 'Cyan',      "TERM":  'Underline'}
 
@@ -119,11 +130,14 @@ let ColourAssignment['User2']          = {"GUIFG": 'red', "GUIBG" : 'lightblue'}
 
 " highlight Pmenu guifg=white guibg=darkblue
 " highlight PmenuSel guifg=red guibg=blue
+
 "highlight Pmenu guifg=white guibg=DarkGray
 "highlight PmenuSel guifg=white guibg=red
+
+let ColourAssignment['Pmenu']          = {"GUIFG": 'white',     "GUIBG":     'DarkBlue'} " preprocessor #define
+let ColourAssignment['PmenuSel']          = {"GUIFG": 'red',     "GUIBG":     'blue'} " preprocessor #define
 "highlight Comment guifg=#404040 gui=none
 "hi Search guibg=yellow guifg=red gui=none
-"highlight return guifg=red guibg=darkblue
 " highlight CursorLine guibg=#222222
 
 let ColourAssignment['FoldColumn']          = {"GUIFG": 'white', "GUIBG" : '#181818'}
@@ -176,7 +190,6 @@ let ColourAssignment['Character']       = {"GUIFG": 'DarkYellow'}
 " Operators (+, =, -, % etc): not defined by default C syntax
 let ColourAssignment['Operator']        = {"GUIFG": '#CCCCFF'}
 
-" Identifiers are shades of Cyan
 
 let ColourAssignment['Identifier']      = {"GUIFG": '#6D9CBE',        "TERM":    'Underline'}
 
